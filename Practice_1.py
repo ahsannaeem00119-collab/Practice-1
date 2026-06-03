@@ -21,6 +21,13 @@ elif average>=60:
     grade="C"
 else:
     grade="F"
+
+
+if grade=="A*" or grade=="A" or grade=="B" or grade=="C":
+    print("Excellent work! , You pass the exam.")
+else:
+    print("Sorry, you did not pass the exam. Better luck next time.")
+    
     
 print("Name :", name)  
 print("Average Marks :", average)
