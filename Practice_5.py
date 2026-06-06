@@ -1,4 +1,6 @@
 # Simple note-taking application
+from datetime import datetime
+
 while True:
     print("\n1. Add note")
     print("2. View notes")
@@ -10,10 +12,13 @@ while True:
     choice = input("Enter your choice: ")
     
     if choice == "1":
+        note = input("Enter your note: ")
+        
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         with open("notes.txt", "a") as file:
-            note = input("Enter your note: ")
-            file.write(note + "\n")
+            file.write(f"[{timestamp}] {note}\n")
             print("Note added successfully!")
+            
     elif choice == "2":
         try:
             with open("notes.txt", "r") as file:
@@ -55,3 +60,5 @@ while True:
     else:
         print("Invalid choice. Please try again.")
         
+    
+    
